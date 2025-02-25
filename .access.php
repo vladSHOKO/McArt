@@ -1,4 +1,12 @@
 <?
+$PERM["buyer_office"]["2"]="T_56";
+$PERM["buyer_office"]["6"]="R";
+$PERM["buyer_office"]["7"]="T_56";
+$PERM["buyer_office"]["*"]="T_56";
+$PERM["seller_office"]["2"]="T_56";
+$PERM["seller_office"]["6"]="T_56";
+$PERM["seller_office"]["7"]="R";
+$PERM["seller_office"]["*"]="T_56";
 $PERM["search"]["5"]="W";
 $PERM["products"]["5"]="W";
 $PERM["services"]["5"]="W";
