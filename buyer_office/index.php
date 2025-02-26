@@ -12,16 +12,17 @@ $APPLICATION->SetTitle("Кабинет покупателя");
 		"USER_PROPERTY_NAME" => ""
 	)
 );?><br>
+ <br>
  <?$APPLICATION->IncludeComponent(
 	"bitrix:subscribe.form", 
 	".default", 
 	array(
 		"CACHE_TIME" => "3600",
 		"CACHE_TYPE" => "A",
-		"PAGE" => "#SITE_DIR#about/subscr_edit.php",
+		"COMPONENT_TEMPLATE" => ".default",
+		"PAGE" => "/personal/subscr_edit.php",
 		"SHOW_HIDDEN" => "Y",
-		"USE_PERSONALIZATION" => "Y",
-		"COMPONENT_TEMPLATE" => ".default"
+		"USE_PERSONALIZATION" => "N"
 	),
 	false
 );?><br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
