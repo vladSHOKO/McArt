@@ -85,7 +85,7 @@ $APPLICATION->SetTitle("Вакансии");
 		"COMPONENT_TEMPLATE" => ".default",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
-			"section" => "#SECTION_CODE#/",
+			"section" => "",
 			"detail" => "#ELEMENT_CODE#/",
 		)
 	),

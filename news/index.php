@@ -22,7 +22,7 @@ $APPLICATION->SetTitle("Новости");
 		"SORT_ORDER2" => "ASC",
 		"CHECK_DATES" => "Y",
 		"SEF_MODE" => "Y",
-		"SEF_FOLDER" => "/about_service/news/",
+		"SEF_FOLDER" => "news/",
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_SHADOW" => "N",
 		"AJAX_OPTION_JUMP" => "Y",
@@ -86,7 +86,7 @@ $APPLICATION->SetTitle("Новости");
 		"SHOW_404" => "N",
 		"MESSAGE_404" => "",
 		"SEF_URL_TEMPLATES" => array(
-			"news" => "",
+			"news" => "about_service/news/",
 			"section" => "",
 			"detail" => "#ELEMENT_CODE#/",
 			"rss" => "rss/",
