@@ -51,7 +51,7 @@ IncludeTemplateLangFile(__FILE__);
 
 <div class="site-loader"></div>
 
-<div class="site-wrap">`
+<div class="site-wrap">
 
     <div class="site-mobile-menu">
         <div class="site-mobile-menu-header">
