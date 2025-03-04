@@ -1,0 +1,2 @@
+<?php
+$MESS['NAVIGATION'] = 'Навигация';
