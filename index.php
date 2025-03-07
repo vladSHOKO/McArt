@@ -19,7 +19,7 @@ $APPLICATION->IncludeComponent(
 		"AJAX_OPTION_STYLE" => "Y",
 		"CACHE_FILTER" => "N",
 		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "36000000",
+		"CACHE_TIME" => "172800",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
 		"DETAIL_URL" => "",
@@ -70,7 +70,7 @@ $APPLICATION->IncludeComponent(
 		"COMPONENT_TEMPLATE" => ".default"
 	),
 	false
-);?>
+); ?>
     <div class="slide-one-item home-slider owl-carousel">
         <div class="site-blocks-cover"
              style="background-image: url(<?= SITE_TEMPLATE_PATH . "/" ?>images/hero_bg_1.jpg);" data-aos="fade"
@@ -156,7 +156,34 @@ $APPLICATION->IncludeComponent(
             </div>
         </div>
     </div>
+
     <div class="site-section site-section-sm bg-light">
+<? $APPLICATION->IncludeComponent(
+	"bitrix:news.line", 
+	".default", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "m/d/Y",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "172800",
+		"CACHE_TYPE" => "A",
+		"DETAIL_URL" => "",
+		"FIELD_CODE" => array(
+			0 => "NAME",
+			1 => "",
+		),
+		"IBLOCKS" => array(
+			0 => "1",
+		),
+		"IBLOCK_TYPE" => "announcement",
+		"NEWS_COUNT" => "9",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
+); ?>
         <div class="container">
             <div class="row mb-5">
                 <div class="col-12">
@@ -388,6 +415,32 @@ $APPLICATION->IncludeComponent(
             </div>
 
             <div class="row">
+                <?$APPLICATION->IncludeComponent(
+	"bitrix:news.line", 
+	".default", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "m/d/Y",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "7776000",
+		"CACHE_TYPE" => "A",
+		"DETAIL_URL" => "",
+		"FIELD_CODE" => array(
+			0 => "NAME",
+			1 => "",
+		),
+		"IBLOCKS" => array(
+			0 => "7",
+		),
+		"IBLOCK_TYPE" => "services",
+		"NEWS_COUNT" => "6",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
+);?>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <a href="#" class="service text-center border rounded">
                         <span class="icon flaticon-house"></span>
@@ -445,6 +498,32 @@ $APPLICATION->IncludeComponent(
                 </div>
             </div>
             <div class="row">
+                <?$APPLICATION->IncludeComponent(
+	"bitrix:news.line", 
+	".default", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "m/d/Y",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "604800",
+		"CACHE_TYPE" => "A",
+		"DETAIL_URL" => "",
+		"FIELD_CODE" => array(
+			0 => "NAME",
+			1 => "",
+		),
+		"IBLOCKS" => array(
+			0 => "2",
+		),
+		"IBLOCK_TYPE" => "news",
+		"NEWS_COUNT" => "3",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
+);?>
                 <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
                     <a href="#"><img src="<?= SITE_TEMPLATE_PATH . "/" ?>images/img_4.jpg" alt="Image"
                                      class="img-fluid"></a>
