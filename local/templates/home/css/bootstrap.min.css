@@ -502,7 +502,7 @@ pre {
   width: 100%;
   min-height: 1px;
   padding-right: 15px;
-  padding-left: 15px; }
+  padding-left: 2px; }
 
 .col {
   -ms-flex-preferred-size: 0;
