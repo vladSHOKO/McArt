@@ -152,3 +152,27 @@ IncludeTemplateLangFile(__FILE__);
         </div>
     </div>
 </div>
+<?if($APPLICATION->GetCurPage() !== "/"):?>
+    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(<?=SITE_TEMPLATE_PATH . '/'?>images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row align-items-center justify-content-center text-center">
+                <div class="col-md-10">
+                    <h1 class="mb-2"><?$APPLICATION->ShowTitle()?></h1>
+                    <?$APPLICATION->IncludeComponent(
+	"bitrix:breadcrumb", 
+	"custom_navigation_chain", 
+	array(
+		"PATH" => "",
+		"SITE_ID" => "s1",
+		"START_FROM" => "0",
+		"COMPONENT_TEMPLATE" => "custom_navigation_chain"
+	),
+	false
+);?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<?endif;?>
