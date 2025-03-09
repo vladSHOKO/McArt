@@ -397,7 +397,7 @@ mark,
 
 .img-fluid {
   max-width: 100%;
-  height: auto; }
+  height: 302px; }
 
 .img-thumbnail {
   padding: 0.25rem;
@@ -501,8 +501,8 @@ pre {
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 2px; }
+  padding-right: 5px;
+  padding-left: 5px; }
 
 .col {
   -ms-flex-preferred-size: 0;

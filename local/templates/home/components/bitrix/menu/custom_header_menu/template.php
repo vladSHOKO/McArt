@@ -17,7 +17,7 @@ foreach($arResult as $arItem):?>
 			<li class="has-children"><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a>
 				<ul class="dropdown">
 		<?else:?>
-			<li class="has-children<?if ($arItem["SELECTED"]):?>, active<?endif?>"><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a>
+			<li class="has-children"><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a>
 				<ul class="dropdown">
 		<?endif?>
 
