@@ -11,7 +11,11 @@ global $APPLICATION;
 if(empty($arResult))
 	return "";
 
-$strReturn = '';
+$strReturn = '<div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(' . SITE_TEMPLATE_PATH . '/' . 'images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row align-items-center justify-content-center text-center">
+                <div class="col-md-10">
+                    <h1 class="mb-2">' . $APPLICATION->GetTitle() . '</h1>';
 
 //we can't use $APPLICATION->SetAdditionalCSS() here because we are inside the buffered function GetNavChain()
 $css = $APPLICATION->GetCSSArray();
@@ -47,7 +51,10 @@ for($index = 0; $index < $itemSize; $index++)
 	}
 }
 
-$strReturn .= '<div style="clear:both"></div></div>';
+$strReturn .= '<div style="clear:both"></div></div></div>
+            </div>
+        </div>
+    </div>';
 
 return $strReturn;
 ?>
