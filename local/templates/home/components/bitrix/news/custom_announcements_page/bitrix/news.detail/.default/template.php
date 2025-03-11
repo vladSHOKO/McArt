@@ -12,6 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<pre><?php print_r($arResult['DISPLAY_PROPERTIES'])?></pre>
 <div class="site-blocks-cover overlay" style="background-image: url(<?= $arResult['DETAIL_PICTURE']['SAFE_SRC'] ?>);"
      data-aos="fade" data-stellar-background-ratio="0.5">
     <div class="container">
@@ -33,10 +34,10 @@ $this->setFrameMode(true);
                 <div class="mb-5">
                     <div class="slide-one-item home-slider owl-carousel">
                         <?
-                        $gallery = $arResult['PROPERTIES']['GALLERY_IMAGE']['VALUE'];
+                        $gallery = $arResult['DISPLAY_PROPERTIES']['GALLERY_IMAGE']['FILE_VALUE'];
                         if (!empty($gallery)) {
-                            foreach ($gallery as $item) {
-                                $image = CFile::GetFileArray($item);
+                            foreach ($gallery as $image) {
+
                                 echo '<div><img src="' . $image['SRC'] . '" alt="Image" class="img-fluid"></div>';
                             }
                         }
@@ -88,10 +89,9 @@ $this->setFrameMode(true);
                             <h2 class="h4 text-black mb-3">Галерея изображений</h2>
                         </div>
                         <?
-                        $gallery = $arResult['PROPERTIES']['GALLERY_IMAGE']['VALUE'];
+                        $gallery = $arResult['DISPLAY_PROPERTIES']['GALLERY_IMAGE']['FILE_VALUE'];
                         if (!empty($gallery)) {
-                            foreach ($gallery as $item) {
-                                $image = CFile::GetFileArray($item);
+                            foreach ($gallery as $image) {
                                 echo '<div class="col-sm-6 col-md-4 col-lg-3 mb-4"><a href="' . $image['SRC'] . '" class="image-popup gal-item"><img src="' . $image['SRC'] . '" alt="Image" class="img-fluid"></a></div>';
                             }
                         }
@@ -99,15 +99,14 @@ $this->setFrameMode(true);
 
                     </div>
                     <?
-                    $additionalFilesID = $arResult['PROPERTIES']['ADDITIONAL_MATERIALS']['VALUE'];
-                    if (!empty($additionalFilesID)):
+                    $additionalFiles = $arResult['DISPLAY_PROPERTIES']['ADDITIONAL_MATERIALS']['FILE_VALUE'];
+                    if (!empty($additionalFiles)):
                     ?>
                     <div class="col-12">
                         <h2 class="h4 text-black mb-3">Дополнительные материалы</h2>
                     </div>
                     <div><?
-                        foreach ($additionalFilesID as $fileID) {
-                            $file = CFile::GetFileArray($fileID);
+                        foreach ($additionalFiles as $file) {
                             echo '<a href="' . $file['SRC'] . '">' . $file['ORIGINAL_NAME'] . '</a><br>';
                         }
                         ?>
