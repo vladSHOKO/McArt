@@ -13,9 +13,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 /** @var CBitrixComponent $component */
 
 ?>
-    <div class="site-section-title mb-3">
-        <h2><?=GetMessage("OUR_COMPANY")?></h2>
-    </div>
+
 <?php
 $this->setFrameMode(true);
 
