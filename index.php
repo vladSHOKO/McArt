@@ -174,7 +174,7 @@ $APPLICATION->IncludeComponent(
 		"FIELD_CODE" => array(
 			0 => "NAME",
 			1 => "PROPERTY_LINK",
-			2 => "",
+			2 => "PROPERTY_ICON",
 		),
 		"IBLOCKS" => array(
 			0 => "7",

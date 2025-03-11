@@ -40,22 +40,30 @@ $this->setFrameMode(true);
                 </div>
                 <div class="prop-more-info">
                     <div class="inner d-flex">
+                        <?if(!empty($arItem['PROPERTY_TOTAL_AREA_VALUE'])): ?>
                         <div class="col">
                             <span><?=GetMessage("AREA")?>:</span>
                             <strong><sup><?= $arItem['PROPERTY_TOTAL_AREA_VALUE'] ?></sup></strong>
                         </div>
+                        <?endif;?>
+                        <?if(!empty($arItem['PROPERTY_NUMBER_OF_FLOORS_VALUE'])): ?>
                         <div class="col">
                             <span><?=GetMessage("FLOOR")?>:</span>
                             <strong><?= $arItem['PROPERTY_NUMBER_OF_FLOORS_VALUE'] ?></strong>
                         </div>
+                        <?endif;?>
+                        <?if(!empty($arItem['PROPERTY_NUMBER_OF_BATHROOMS_VALUE'])): ?>
                         <div class="col">
                             <span><?=GetMessage("BATHROOM")?>:</span>
                             <strong><?= $arItem['PROPERTY_NUMBER_OF_BATHROOMS_VALUE'] ?></strong>
                         </div>
+                        <?endif;?>
+                        <?if(!empty($arItem['PROPERTY_GARAGE_VALUE'])): ?>
                         <div class="col">
                             <span><?=GetMessage("GARAGE")?>:</span>
                             <strong><?=$arItem['PROPERTY_GARAGE_VALUE']?></strong>
                         </div>
+                        <?endif;?>
                     </div>
                 </div>
             </div>
