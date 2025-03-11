@@ -2,103 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Объявления");
 ?>
-    <div class="pt-5">
-        <div class="container">
-            <form class="row">
 
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-                    <div class="select-wrap">
-                        <span class="icon icon-arrow_drop_down"></span>
-                        <select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
-                            <option value="">Lot Area</option>
-                            <option value="1000">1000</option>
-                            <option value="800">800</option>
-                            <option value="600">600</option>
-                            <option value="400">400</option>
-                            <option value="200">200</option>
-                            <option value="100">100</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-                    <div class="select-wrap">
-                        <span class="icon icon-arrow_drop_down"></span>
-                        <select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
-                            <option value="">Property Status</option>
-                            <option value="For Sale">For Sale</option>
-                            <option value="For Rent">For Rent</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-                    <div class="select-wrap">
-                        <span class="icon icon-arrow_drop_down"></span>
-                        <select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
-                            <option value="">Location</option>
-                            <option value="United States">United States</option>
-                            <option value="United Kingdom">United Kingdom</option>
-                            <option value="Canada">Canada</option>
-                            <option value="Belgium">Belgium</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-                    <div class="select-wrap">
-                        <span class="icon icon-arrow_drop_down"></span>
-                        <select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
-                            <option value="">Lot Area</option>
-                            <option value="1000">1000</option>
-                            <option value="800">800</option>
-                            <option value="600">600</option>
-                            <option value="400">400</option>
-                            <option value="200">200</option>
-                            <option value="100">100</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-                    <div class="select-wrap">
-                        <span class="icon icon-arrow_drop_down"></span>
-                        <select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
-                            <option value="">Bedrooms</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5+">5+</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-                    <div class="select-wrap">
-                        <span class="icon icon-arrow_drop_down"></span>
-                        <select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
-                            <option value="">Bathrooms</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5+">5+</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-                    <div class="mb-4">
-                        <div id="slider-range" class="border-primary"></div>
-                        <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white"
-                               disabled=""/>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-                    <input type="submit" class="btn btn-primary btn-block form-control-same-height rounded-0"
-                           value="Search">
-                </div>
-
-            </form>
-
-
-        </div>
-    </div>
 <? $APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"custom_announcements_page", 
@@ -113,19 +17,41 @@ $APPLICATION->SetTitle("Объявления");
 		"BROWSER_TITLE" => "-",
 		"CACHE_FILTER" => "N",
 		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "86400",
+		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_FIELD_CODE" => array(
-			0 => "NAME",
-			1 => "PREVIEW_TEXT",
-			2 => "PREVIEW_PICTURE",
-			3 => "DATE_ACTIVE_FROM",
-			4 => "SHOW_COUNTER",
-			5 => "",
+			0 => "ID",
+			1 => "CODE",
+			2 => "XML_ID",
+			3 => "NAME",
+			4 => "TAGS",
+			5 => "SORT",
+			6 => "PREVIEW_TEXT",
+			7 => "PREVIEW_PICTURE",
+			8 => "DETAIL_TEXT",
+			9 => "DETAIL_PICTURE",
+			10 => "DATE_ACTIVE_FROM",
+			11 => "ACTIVE_FROM",
+			12 => "DATE_ACTIVE_TO",
+			13 => "ACTIVE_TO",
+			14 => "SHOW_COUNTER",
+			15 => "SHOW_COUNTER_START",
+			16 => "IBLOCK_TYPE_ID",
+			17 => "IBLOCK_ID",
+			18 => "IBLOCK_CODE",
+			19 => "IBLOCK_NAME",
+			20 => "IBLOCK_EXTERNAL_ID",
+			21 => "DATE_CREATE",
+			22 => "CREATED_BY",
+			23 => "CREATED_USER_NAME",
+			24 => "TIMESTAMP_X",
+			25 => "MODIFIED_BY",
+			26 => "USER_NAME",
+			27 => "",
 		),
 		"DETAIL_PAGER_SHOW_ALL" => "Y",
 		"DETAIL_PAGER_TEMPLATE" => "",
@@ -134,11 +60,12 @@ $APPLICATION->SetTitle("Объявления");
 			0 => "NUMBER_OF_BATHROOMS",
 			1 => "GARAGE",
 			2 => "TOTAL_AREA",
-			3 => "LINKS_TO_RESOURCES",
-			4 => "PRICE",
-			5 => "NUMBER_OF_FLOORS",
-			6 => "PRIORITY_VALUE",
-			7 => "",
+			3 => "PRIORITY",
+			4 => "LINKS_TO_RESOURCES",
+			5 => "PRICE",
+			6 => "NUMBER_OF_FLOORS",
+			7 => "PRIORITY_VALUE",
+			8 => "",
 		),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
@@ -174,7 +101,7 @@ $APPLICATION->SetTitle("Объявления");
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
 		"PAGER_SHOW_ALL" => "N",
-		"PAGER_SHOW_ALWAYS" => "Y",
+		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_TEMPLATE" => "custom_pagination",
 		"PAGER_TITLE" => "Объявления",
 		"PREVIEW_TRUNCATE_LEN" => "",
@@ -209,10 +136,5 @@ $APPLICATION->SetTitle("Объявления");
 	),
 	false
 ); ?>
-
-    </div>
-
-    </div>
-    </div>
     <br>
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
