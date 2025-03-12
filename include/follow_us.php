@@ -1,4 +1,4 @@
-<h3 class="footer-heading mb-4">FOLLOW US</h3>
+<h3 class="footer-heading mb-4">Наши контакты</h3>
 
 <div>
     <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
