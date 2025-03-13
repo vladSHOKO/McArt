@@ -66,6 +66,7 @@ $APPLICATION->SetTitle("Объявления");
 			6 => "NUMBER_OF_FLOORS",
 			7 => "ADDITIONAL_MATERIALS",
 			8 => "GALLERY_IMAGE",
+			9 => "",
 		),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",

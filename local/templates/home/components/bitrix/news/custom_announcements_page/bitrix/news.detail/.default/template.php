@@ -12,7 +12,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<pre><?php print_r($arResult['DISPLAY_PROPERTIES'])?></pre>
 <div class="site-blocks-cover overlay" style="background-image: url(<?= $arResult['DETAIL_PICTURE']['SAFE_SRC'] ?>);"
      data-aos="fade" data-stellar-background-ratio="0.5">
     <div class="container">
