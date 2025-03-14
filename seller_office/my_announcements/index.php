@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Title");
+$APPLICATION->SetTitle("Мои объявления");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"custom_announcements_page", 
@@ -97,6 +97,7 @@ $APPLICATION->SetTitle("Title");
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"USE_SHARE" => "N",
+		"TITLE" => "Биржа недвижимости",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",

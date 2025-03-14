@@ -31,7 +31,7 @@ $arTemplateParameters = array(
     "TITLE" => array(
         "NAME" => GetMessage("TITLE"),
         "TYPE" => "STRING",
-        "DEFAULT" => "Биржа недвижимости",
+        "DEFAULT" => "Новые возможности для вас",
         ),
 );
 
