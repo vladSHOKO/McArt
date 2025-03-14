@@ -18,7 +18,7 @@ $this->setFrameMode(true);
         <div class="row mb-5">
             <div class="col-12">
                 <div class="site-section-title">
-                    <h2>Новые возможности для вас</h2>
+                    <h2><?=$arParams["TITLE"]?></h2>
                 </div>
             </div>
         </div>
