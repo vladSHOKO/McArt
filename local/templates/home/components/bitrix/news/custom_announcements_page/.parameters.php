@@ -28,6 +28,11 @@ $arTemplateParameters = array(
 		"DEFAULT" =>"N",
 		"REFRESH"=> "Y",
 	),
+    "TITLE" => array(
+        "NAME" => GetMessage("TITLE"),
+        "TYPE" => "STRING",
+        "DEFAULT" => "Биржа недвижимости",
+        ),
 );
 
 if (($arCurrentValues['USE_SHARE'] ?? 'N') === 'Y')
