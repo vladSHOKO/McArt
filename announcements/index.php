@@ -118,7 +118,7 @@ $APPLICATION->SetTitle("Объявления");
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
 		"USE_CATEGORIES" => "N",
-		"USE_FILTER" => "N",
+		"USE_FILTER" => "Y",
 		"USE_PERMISSIONS" => "N",
 		"USE_RATING" => "N",
 		"USE_REVIEW" => "N",
@@ -140,6 +140,15 @@ $APPLICATION->SetTitle("Объявления");
 		"SHARE_SHORTEN_URL_LOGIN" => "",
 		"SHARE_SHORTEN_URL_KEY" => "",
 		"TITLE" => "Новые возможности для вас",
+		"FILTER_NAME" => "",
+		"FILTER_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",
