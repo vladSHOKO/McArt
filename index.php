@@ -2,7 +2,6 @@
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Биржа недвижимости");
 ?>
-
 <?
 $arrFilter = array(
     "PROPERTY_PRIORITY_VALUE" => "Да"
@@ -175,7 +174,7 @@ $APPLICATION->IncludeComponent(
 		"FIELD_CODE" => array(
 			0 => "NAME",
 			1 => "PROPERTY_LINK",
-			2 => "",
+			2 => "PROPERTY_ICON",
 		),
 		"IBLOCKS" => array(
 			0 => "7",

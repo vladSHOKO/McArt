@@ -29,7 +29,7 @@ $this->setFrameMode(true);
         $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
         ?>
         <a href="<?= $arItem["PROPERTY_LINK_VALUE"] ?>" class="service text-center border rounded">
-            <span class="icon flaticon-house"></span>
+            <span class="icon <?=$arItem['PROPERTY_ICON_VALUE']?>"></span>
             <h2 class="service-heading"><?= $arItem['NAME'] ?></h2>
             <p><span class="read-more"><?=GetMessage("GET_MORE")?></span></p>
         </a>
