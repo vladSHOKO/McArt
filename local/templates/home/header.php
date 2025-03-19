@@ -89,9 +89,9 @@ IncludeTemplateLangFile(__FILE__);
                     ); ?>
 
                     <? if ($GLOBALS["USER"]->isAuthorized()): ?>
-                        <p><a href="/login/?logout=yes">Выйти</a></p>
+                        <p><a href="/login/?logout=yes"><?=GetMessage('LOGOUT')?></a></p>
                     <? else: ?>
-                        <p><a href="/login/">Авторизоваться</a></p>
+                        <p><a href="/login/"><?=GetMessage('AUTHORIZE')?></a></p>
                     <? endif; ?>
                     </p>
                 </div>
