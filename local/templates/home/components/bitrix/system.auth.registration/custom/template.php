@@ -21,6 +21,9 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 if ($arResult["SHOW_SMS_FIELD"] == true) {
     CJSCore::Init('phone_auth');
 }
+if (!empty($arParams["~AUTH_RESULT"])) {
+    ShowMessage($arParams["~AUTH_RESULT"]);
+}
 ?>
 
 <div class="col-md-12 col-lg-8 mb-5">

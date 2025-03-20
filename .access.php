@@ -1,4 +1,9 @@
 <?
+$PERM["seller_office"]["2"]="D";
+$PERM["seller_office"]["8"]="W";
+$PERM["seller_office"]["6"]="T_56";
+$PERM["seller_office"]["7"]="R";
+$PERM["seller_office"]["*"]="T_56";
 $PERM["index_inc.php"]["8"]="W";
 $PERM["index.php"]["8"]="W";
 $PERM[".top.menu.php"]["8"]="R";
@@ -6,11 +11,6 @@ $PERM[".bottom.menu.php"]["8"]="R";
 $PERM[".bottom.menu.php"]["2"]="D";
 $PERM["upload"]["8"]="W";
 $PERM["services"]["8"]="W";
-$PERM["seller_office"]["8"]="W";
-$PERM["seller_office"]["2"]="D";
-$PERM["seller_office"]["6"]="T_56";
-$PERM["seller_office"]["7"]="R";
-$PERM["seller_office"]["*"]="T_56";
 $PERM["search"]["8"]="W";
 $PERM["search"]["2"]="D";
 $PERM["products"]["8"]="W";
