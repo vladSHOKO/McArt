@@ -67,39 +67,39 @@ IncludeTemplateLangFile(__FILE__);
             <div class="row align-items-center">
                 <div class="col-6 col-md-6">
                     <p class="mb-0">
-                        <?$APPLICATION->IncludeComponent(
-                                    "bitrix:main.include",
-                                    "",
-                                    Array(
-                                        "AREA_FILE_SHOW" => "file",
-                                        "AREA_FILE_SUFFIX" => "inc",
-                                        "EDIT_TEMPLATE" => "",
-                                        "PATH" => "/include/phone.php"
-                                    )
-                                );?>
-                        <?$APPLICATION->IncludeComponent(
+                        <? $APPLICATION->IncludeComponent(
                             "bitrix:main.include",
                             "",
-                            Array(
+                            array(
+                                "AREA_FILE_SHOW" => "file",
+                                "AREA_FILE_SUFFIX" => "inc",
+                                "EDIT_TEMPLATE" => "",
+                                "PATH" => "/include/phone.php"
+                            )
+                        ); ?>
+                        <? $APPLICATION->IncludeComponent(
+                            "bitrix:main.include",
+                            "",
+                            array(
                                 "AREA_FILE_SHOW" => "file",
                                 "AREA_FILE_SUFFIX" => "inc",
                                 "EDIT_TEMPLATE" => "",
                                 "PATH" => "/include/email.php"
                             )
-                        );?>
+                        ); ?>
                     </p>
                 </div>
                 <div class="col-6 col-md-6 text-right">
-                    <?$APPLICATION->IncludeComponent(
+                    <? $APPLICATION->IncludeComponent(
                         "bitrix:main.include",
                         "",
-                        Array(
+                        array(
                             "AREA_FILE_SHOW" => "file",
                             "AREA_FILE_SUFFIX" => "inc",
                             "EDIT_TEMPLATE" => "",
                             "PATH" => "/include/social_icons.php"
                         )
-                    );?>
+                    ); ?>
                 </div>
             </div>
         </div>
@@ -109,16 +109,16 @@ IncludeTemplateLangFile(__FILE__);
         <div class="container py-1">
             <div class="row align-items-center">
                 <div class="col-8 col-md-8 col-lg-4">
-                    <?$APPLICATION->IncludeComponent(
+                    <? $APPLICATION->IncludeComponent(
                         "bitrix:main.include",
                         "",
-                        Array(
+                        array(
                             "AREA_FILE_SHOW" => "file",
                             "AREA_FILE_SUFFIX" => "inc",
                             "EDIT_TEMPLATE" => "",
                             "PATH" => "/include/title.php"
                         )
-                    );?>
+                    ); ?>
                 </div>
                 <div class="col-4 col-md-4 col-lg-8">
                     <nav class="site-navigation text-right text-md-right" role="navigation">
@@ -128,47 +128,21 @@ IncludeTemplateLangFile(__FILE__);
                                         class="icon-menu h3"></span></a></div>
 
                         <ul class="site-menu js-clone-nav d-none d-lg-block">
-                            <?$APPLICATION->IncludeComponent(
-	"bitrix:menu", 
-	"horizontal_multilevel", 
-	array(
-		"ALLOW_MULTI_SELECT" => "N",
-		"CHILD_MENU_TYPE" => "left",
-		"DELAY" => "N",
-		"MAX_LEVEL" => "3",
-		"MENU_CACHE_GET_VARS" => array(
-		),
-		"MENU_CACHE_TIME" => "604800",
-		"MENU_CACHE_TYPE" => "A",
-		"MENU_CACHE_USE_GROUPS" => "Y",
-		"ROOT_MENU_TYPE" => "top",
-		"USE_EXT" => "N",
-		"COMPONENT_TEMPLATE" => "horizontal_multilevel"
-	),
-	false
-);?>
-                            <li class="active">
-                                <a href="index.html">Home</a>
-                            </li>
-                            <li class="has-children">
-                                <a href="properties.html">Properties</a>
-                                <ul class="dropdown">
-                                    <li><a href="#">Buy</a></li>
-                                    <li><a href="#">Rent</a></li>
-                                    <li><a href="#">Lease</a></li>
-                                    <li class="has-children">
-                                        <a href="#">Menu</a>
-                                        <ul class="dropdown">
-                                            <li><a href="#">Menu One</a></li>
-                                            <li><a href="#">Menu Two</a></li>
-                                            <li><a href="#">Menu Three</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <? $APPLICATION->IncludeComponent("bitrix:menu", "custom_header_menu", array(
+                                "ALLOW_MULTI_SELECT" => "N",
+                                "CHILD_MENU_TYPE" => "left",
+                                "DELAY" => "N",
+                                "MAX_LEVEL" => "3",
+                                "MENU_CACHE_GET_VARS" => "",
+                                "MENU_CACHE_TIME" => "604800",
+                                "MENU_CACHE_TYPE" => "A",
+                                "MENU_CACHE_USE_GROUPS" => "Y",
+                                "ROOT_MENU_TYPE" => "top",
+                                "USE_EXT" => "N",
+                                "COMPONENT_TEMPLATE" => "horizontal_multilevel"
+                            ),
+                                false
+                            ); ?>
                         </ul>
                     </nav>
                 </div>
@@ -178,3 +152,20 @@ IncludeTemplateLangFile(__FILE__);
         </div>
     </div>
 </div>
+<?if($APPLICATION->GetCurPage() !== "/"):?>
+
+                    <?$APPLICATION->IncludeComponent(
+	"bitrix:breadcrumb", 
+	"custom_navigation_chain", 
+	array(
+		"PATH" => "",
+		"SITE_ID" => "s1",
+		"START_FROM" => "0",
+		"COMPONENT_TEMPLATE" => "custom_navigation_chain"
+	),
+	false
+);?>
+
+
+
+<?endif;?>
