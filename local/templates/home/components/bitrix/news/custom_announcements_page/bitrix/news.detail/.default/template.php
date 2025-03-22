@@ -38,7 +38,8 @@ $this->setFrameMode(true);
                     <div class="mb-5">
                         <div class="slide-one-item home-slider owl-carousel">
                             <?
-                            if (key_exists('0', $gallery)) {
+                            $imageCount = count($arResult['DISPLAY_PROPERTIES']['GALLERY_IMAGE']['VALUE']);
+                            if ($imageCount > 1) {
                                 foreach ($gallery as $image) {
                                     echo '<div><img src="' . $image['SRC'] . '" alt="Image" class="img-fluid"></div>';
                                 }
@@ -108,7 +109,7 @@ $this->setFrameMode(true);
                                 <h2 class="h4 text-black mb-3"><?= GetMessage("IMAGE_GALLERY") ?></h2>
                             </div>
                             <?
-                            if (key_exists('0', $gallery)) {
+                            if ($imageCount > 1) {
                                 foreach ($gallery as $image) {
                                     echo '<div class="col-sm-6 col-md-4 col-lg-3 mb-4"><a href="' . $image['SRC'] . '" class="image-popup gal-item"><img src="' . $image['SRC'] . '" alt="Image" class="img-fluid"></a></div>';
                                 }
@@ -129,7 +130,8 @@ $this->setFrameMode(true);
                             <h2 class="h4 text-black mb-3"><?= GetMessage("ADDITIONAL_FILES") ?></h2>
                         </div>
                         <div><?
-                            if (key_exists('0', $additionalFiles)) {
+                            $fileCount = count($arResult['DISPLAY_PROPERTIES']['ADDITIONAL_MATERIALS']['VALUE']);
+                            if ($fileCount > 1) {
                                 foreach ($additionalFiles as $file) {
                                     echo '<a href="' . $file['SRC'] . '">' . $file['ORIGINAL_NAME'] . '</a><br>';
                                 }
@@ -147,7 +149,8 @@ $this->setFrameMode(true);
                             <h2 class="h4 text-black mb-3"><?= GetMessage("FOREIGN_LINKS") ?></h2>
                         </div>
                         <div><?
-                            if (key_exists('0', $links)) {
+                            $linkCount = count($arResult['DISPLAY_PROPERTIES']['LINKS_TO_RESOURCES']['VALUE']);
+                            if ($linkCount > 1) {
                                 foreach ($links as $link) {
                                     echo '<a href="' . $link . '">' . $link . '</a><br>';
                                 }
