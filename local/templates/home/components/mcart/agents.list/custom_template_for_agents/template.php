@@ -15,9 +15,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-/*
- * Для постраничной навигации использовать компонент bitrix:main.pagenavigation
- */
 ?>
 
 <div class="site-section site-section-sm bg-light">
@@ -64,6 +61,19 @@ $this->setFrameMode(true);
                 </div>
             <? endforeach; ?>
             <?endif;?>
+
+            <?
+            $APPLICATION->IncludeComponent(
+                "bitrix:main.pagenavigation",
+                "custom_pagenavigation_for_agents",
+                array(
+                    "NAV_OBJECT" => $arResult["AGENTS"]['NAV_OBJECT'],
+                    "SEF_MODE" => "N",
+                    "SHOW_COUNT" => "Y"
+                ),
+                false
+            );
+            ?>
         </div>
     </div>
 

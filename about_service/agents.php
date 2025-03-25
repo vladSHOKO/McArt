@@ -8,7 +8,7 @@ $APPLICATION->SetTitle("Агенты");
 	array(
 		"HLBLOCK_TNAME" => "estate_agents",
 		"COMPONENT_TEMPLATE" => "custom_template_for_agents",
-		"ELEMENTS_PER_PAGE" => "5",
+		"ELEMENTS_PER_PAGE" => "3",
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => "36000000"
 	),
