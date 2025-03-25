@@ -73,7 +73,6 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
     {
         $this->initCache($arParams); // создание параметров для работы кеша
 
-        // Проверка подключение модуля highloadblock, отдать ошибку если модуль не подключен
         if (!Loader::includeModule('highloadblock')) {
             $this->addError(
                 new Error(Loc::getMessage('MCART_AGENTS_LIST_MODULE_NOT_INSTALLED', ['#MODULE#' => 'highloadblock']), 404)
@@ -111,7 +110,6 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
             return;
         }
 
-        // https://dev.1c-bitrix.ru/api_help/main/reference/cphpcache/initcache.php в данном компоненте используется Bitrix\Main\Data\Cache::initCache из нового ядра
         if ($this->cache->initCache(
             $this->arParams["CACHE_TIME"],
             $this->cacheKey,
@@ -249,11 +247,6 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
         ];
 
         $rsAgents = $entity::getList([
-            /*
-             * С помощью GetList запросить список "Активных" агентов,
-             * в запросе ограничить количество агентов (использовать объект для пагинации) 
-             * https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=43&LESSON_ID=2741
-             */
             "filter" => $filter,
             "count_total" => true,
             "offset" => $nav->getOffset(),
@@ -282,10 +275,6 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
         return $arAgents;
     }
 
-
-
-    // Далее код для ajax, к нему можно вернуться после внедрения верски и js
-
     /**
      * Конфигурация событий для ajax
      */
@@ -313,22 +302,28 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
     {
         $result = []; // ответ, который уйдет на фронт
 
-        $value = []; // массив ID элементов, которые пользователь добавил в избраное
-        /*
-         * 1. Получить значения свойства из настроек пользователя (CUserOptions) для текущего пользователя
-         * https://dev.1c-bitrix.ru/community/webdev/user/259944/blog/17105/
-         * 2. Если значение есть, то
-         *   2.1. Проверить, что значение массив, если нет, то сделать массивом
-         *   2.2. Проверить есть ли в массиве $agentID
-         *     2.2.3. Если есть, удалить из массива
-         *     2.2.4. Если нет, добавить в массив
-         *   2.3. Записать в $value
-         * 3. Если значение нет, то $agentID записать $value
-         * 4. Записать $value (результат) в бз, метод CUserOptions::SetOption
-         * (его нет в документации, код метода и его параметры можно найти в ядре (/bitrix/modules/main/) или в гугле
-         * 5. Отправить на фронт в массиве $result в ключе 'action' значение 'success', если все прошло удачно
-         */
+        $value = []; // массив ID элементов, которые пользователь добавил в избранное
 
+        $starAgents = CUserOptions::GetOption("mcart_agent", "options_agents_star");
+        if (!empty($starAgents)) {
+            if (!is_array($starAgents)) {
+                $starAgents = [$starAgents];
+            }
+            if (in_array($agentID, $starAgents)) {
+                $agentIDKey = array_search($agentID, $starAgents);
+                unset($starAgents[$agentIDKey]);
+            } else {
+                $starAgents[] = $agentID;
+            }
+            $value = $starAgents;
+        } else {
+            $value[] = $agentID;
+        }
+        if (CUserOptions::SetOption("mcart_agent", "options_agents_star", $value)) {
+            $result["action"] = "success";
+        }
+
+        $result["agents"] = $value;
 
         return $result;
     }

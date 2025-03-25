@@ -1,46 +1,42 @@
-BX.ready(function() {
-    /*
-    1. Спомощью document.querySelectorAll получить все DOM-элементы с классом star
-    2. Повесить обработчик события на click
-    Пример: BX.bind(element, "click", clickStar);
-     */
+BX.ready(function () {
+    const elements = document.querySelectorAll(".star");
+
+    elements.forEach(element => {
+        BX.bind(element, "click", clickStar);
+    });
 });
+
 function clickStar(event) {
     event.preventDefault();
 
-    /*
-    Получить agentID, в template.php добавьте тегу в классов star атрибут dataset
-    cо значением ID элемента Агента
-    (https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)
-     */
+    let element = event.currentTarget;
+    let agentID = element.dataset.id;
 
-    if (agentID) { // если ID есть, то делаем ajax-запрос
-        BX.ajax // https://dev.1c-bitrix.ru/api_help/js_lib/ajax/bx_ajax_runcomponentaction.php
+    if (agentID) {
+        BX.ajax
             .runComponentAction(
                 "mcart:agents.list", // название компонента
-                "clickStar", // название метода, который будет вызван из class.php
+                "clickStar", // название метода, который будет вызван
                 {
-                    mode: "class", //это означает, что мы хотим вызывать действие из class.php
+                    mode: "class", //вызывать действие из class.php
                     data: {
-                        agentID: agentID // параметры, которые передаются на бэк
+                        agentID: agentID
                     },
                 }
             )
-            .then( // если на бэке нет ошибок выполниться
+            .then(
                 BX.proxy((response) => {
-                    console.log(response); // консоле можно будет увидеть ответ от бэка, для разработки в конечном коде лучше убрать
                     let data = response.data;
                     if (data['action'] == 'success') {
-                        // Отобразить пользоватиелю, что агент добавлен в избраное (желтая звездочка, есть в верстке)
+                        element.classList.toggle("active");
                     }
 
                 }, this)
             )
-            .catch( // если на бэке есть ошибки выполниться
+            .catch(
                 BX.proxy((response) => {
                     console.log(response.errors);
                 }, this)
-            );
+            )
     }
-
 }
