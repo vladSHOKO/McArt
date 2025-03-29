@@ -66,27 +66,33 @@ IncludeTemplateLangFile(__FILE__);
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-6 col-md-6">
-                    <p class="mb-0">
-                        <? $APPLICATION->IncludeComponent(
-                            "bitrix:main.include",
-                            "",
-                            array(
-                                "AREA_FILE_SHOW" => "file",
-                                "AREA_FILE_SUFFIX" => "inc",
-                                "EDIT_TEMPLATE" => "",
-                                "PATH" => "/include/phone.php"
-                            )
-                        ); ?>
-                        <? $APPLICATION->IncludeComponent(
-                            "bitrix:main.include",
-                            "",
-                            array(
-                                "AREA_FILE_SHOW" => "file",
-                                "AREA_FILE_SUFFIX" => "inc",
-                                "EDIT_TEMPLATE" => "",
-                                "PATH" => "/include/email.php"
-                            )
-                        ); ?>
+
+                    <? $APPLICATION->IncludeComponent(
+                        "bitrix:main.include",
+                        "",
+                        array(
+                            "AREA_FILE_SHOW" => "file",
+                            "AREA_FILE_SUFFIX" => "inc",
+                            "EDIT_TEMPLATE" => "",
+                            "PATH" => "/include/phone.php"
+                        )
+                    ); ?>
+                    <? $APPLICATION->IncludeComponent(
+                        "bitrix:main.include",
+                        "",
+                        array(
+                            "AREA_FILE_SHOW" => "file",
+                            "AREA_FILE_SUFFIX" => "inc",
+                            "EDIT_TEMPLATE" => "",
+                            "PATH" => "/include/email.php"
+                        )
+                    ); ?>
+
+                    <? if ($GLOBALS["USER"]->isAuthorized()): ?>
+                        <p><a href="/login/?logout=yes"><?=GetMessage('LOGOUT')?></a></p>
+                    <? else: ?>
+                        <p><a href="/login/"><?=GetMessage('AUTHORIZE')?></a></p>
+                    <? endif; ?>
                     </p>
                 </div>
                 <div class="col-6 col-md-6 text-right">
@@ -152,20 +158,19 @@ IncludeTemplateLangFile(__FILE__);
         </div>
     </div>
 </div>
-<?if($APPLICATION->GetCurPage() !== "/"):?>
+<? if ($APPLICATION->GetCurPage() !== "/"): ?>
 
-                    <?$APPLICATION->IncludeComponent(
-	"bitrix:breadcrumb", 
-	"custom_navigation_chain", 
-	array(
-		"PATH" => "",
-		"SITE_ID" => "s1",
-		"START_FROM" => "0",
-		"COMPONENT_TEMPLATE" => "custom_navigation_chain"
-	),
-	false
-);?>
+    <? $APPLICATION->IncludeComponent(
+        "bitrix:breadcrumb",
+        "custom_navigation_chain",
+        array(
+            "PATH" => "",
+            "SITE_ID" => "s1",
+            "START_FROM" => "0",
+            "COMPONENT_TEMPLATE" => "custom_navigation_chain"
+        ),
+        false
+    ); ?>
 
 
-
-<?endif;?>
+<? endif; ?>

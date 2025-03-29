@@ -33,6 +33,12 @@ $arTemplateParameters = array(
         "TYPE" => "STRING",
         "DEFAULT" => "Новые возможности для вас",
         ),
+    "SHOW_FILTER_TEMPLATE" => array(
+        "NAME" => GetMessage("SHOW_FILTER_TEMPLATE"),
+        "DESCRIPTION" => GetMessage("SHOW_FILTER_TEMPLATE_DESCRIPTION"),
+        "TYPE" => "CHECKBOX",
+        "DEFAULT" => "N"
+    )
 );
 
 if (($arCurrentValues['USE_SHARE'] ?? 'N') === 'Y')
