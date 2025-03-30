@@ -1,6 +1,3 @@
 .idea/
 /bitrix/*
-!/bitrix/php_interface/
-/bitrix/php_interface/*
-!/bitrix/php_interface/migrations/
 /upload/
