@@ -36,39 +36,32 @@ IncludeTemplateLangFile(__FILE__);
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
         <a href="#" class="logo d-flex align-items-center">
-            <h1 class="sitename"><?=GetMessage("COMPANY_TITLE")?></h1>
+            <h1 class="sitename"><?= GetMessage("COMPANY_TITLE") ?></h1>
         </a>
 
-        <nav id="navmenu" class="navmenu">
-            <ul>
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">Пункт 1</a></li>
-                <li><a href="#">Пункт 1</a></li>
-                <li><a href="#">Пункт 3</a></li>
-                <li><a href="#">Пункт 4</a></li>
-                <li class="dropdown">
-                    <a href="#"><span>Пункт 5 с подменю</span>
-                        <i class="bi bi-chevron-down toggle-dropdown"></i>
-                    </a>
-                    <ul>
-                        <li><a href="#">Пункт 1</a></li>
-                        <li class="dropdown"><a href="#"><span>Пункт 2 с подменю</span> <i
-                                        class="bi bi-chevron-down toggle-dropdown"></i></a>
-                            <ul>
-                                <li><a href="#">Пункт 1</a></li>
-                                <li><a href="#">Пункт 2</a></li>
-                                <li><a href="#">Пункт 3</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Пункт 2</a></li>
-                        <li><a href="#">Пункт 3</a></li>
-                        <li><a href="#">Пункт 4</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Пункт 6</a></li>
-            </ul>
-            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
+
+        <?php
+        $APPLICATION->IncludeComponent(
+	"bitrix:menu", 
+	"custom_ex1_top_menu", 
+	array(
+		"ROOT_MENU_TYPE" => "top",
+		"MAX_LEVEL" => "3",
+		"MENU_CACHE_TYPE" => "A",
+		"TEMPLATE_TYPE" => defined("SITE_TEMPLATE_ID")?SITE_TEMPLATE_ID:"",
+		"COMPONENT_TEMPLATE" => "custom_ex1_top_menu",
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"CHILD_MENU_TYPE" => "left",
+		"USE_EXT" => "N",
+		"DELAY" => "N",
+		"ALLOW_MULTI_SELECT" => "N"
+	),
+	false
+);
+        ?>
 
     </div>
 </header>
