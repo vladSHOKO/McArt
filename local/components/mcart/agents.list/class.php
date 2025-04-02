@@ -213,11 +213,7 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
 
             while ($enum = $enumValues->Fetch()) {
                 $result[$enum['ID']] = [
-                    'ID' => $enum['ID'],
                     'VALUE' => $enum['VALUE'],
-                    'XML_ID' => $enum['XML_ID'],
-                    'SORT' => $enum['SORT'],
-                    'DEF' => $enum['DEF'],
                 ];
             }
         }
@@ -247,6 +243,7 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
         ];
 
         $rsAgents = $entity::getList([
+            "select" => ["ID", "UF_ACTIVITY", "UF_TYPE_OF_ACTIVITY", "UF_PHOTO", "UF_PHONE", "UF_EMAIL", "UF_FIO"],
             "filter" => $filter,
             "count_total" => true,
             "offset" => $nav->getOffset(),
@@ -263,7 +260,10 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
             /**  В свойстве Фото записан ID файла из таблицы b_file,
              * если значение есть, то получить путь через класс \CFile
              */
-            $arAgent["UF_PHOTO_URL"] = \CFile::GetPath($arAgent["UF_PHOTO"]);
+            if (!empty($arAgent["UF_PHOTO"])) {
+                $arAgent["UF_PHOTO_URL"] = \CFile::GetPath($arAgent["UF_PHOTO"]);
+
+            }
 
 
             $arAgents['ITEMS'][$arAgent['ID']] = $arAgent;
