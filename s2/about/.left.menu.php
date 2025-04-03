@@ -20,6 +20,13 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"" 
+	),
+	Array(
+		"test", 
+		"/s2/about/test/", 
+		Array(), 
+		Array(), 
+		"" 
 	)
 );
 ?>
