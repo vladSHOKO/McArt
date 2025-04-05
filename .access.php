@@ -1,4 +1,7 @@
 <?
+$PERM["about"]["10"]="W";
+$PERM["about_service"]["2"]="D";
+$PERM["about_service"]["8"]="W";
 $PERM["seller_office"]["2"]="D";
 $PERM["seller_office"]["8"]="W";
 $PERM["seller_office"]["6"]="T_56";
@@ -34,8 +37,6 @@ $PERM["buyer_office"]["7"]="T_56";
 $PERM["buyer_office"]["*"]="T_56";
 $PERM["announcements"]["8"]="W";
 $PERM["announcements"]["2"]="D";
-$PERM["about_service"]["8"]="W";
-$PERM["about_service"]["2"]="D";
 $PERM["urlrewrite.php"]["8"]="U";
 $PERM["favicon.ico"]["8"]="U";
 $PERM["500.html"]["8"]="U";

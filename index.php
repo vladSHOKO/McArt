@@ -1,4 +1,7 @@
 <?
+
+use Bitrix\Highloadblock\HighloadBlockTable;
+
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Биржа недвижимости");
 ?>

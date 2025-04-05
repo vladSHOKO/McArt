@@ -213,7 +213,7 @@ class Version20250312143454 extends Version
             'USER_TYPE_ID' => 'enumeration',
             'XML_ID' => 'activity',
             'SORT' => '100',
-            'MULTIPLE' => 'Y',
+            'MULTIPLE' => 'N',
             'MANDATORY' => 'N',
             'SHOW_FILTER' => 'N',
             'SHOW_IN_LIST' => 'Y',

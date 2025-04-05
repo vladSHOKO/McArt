@@ -1,7 +1,7 @@
 <?
 $sSectionName = "Контакты";
-$arDirProperties = Array(
-   "description" => "Контакты",
-   "keywords" => "Контакты"
+$arDirProperties = array(
+   "description" => "Добро пожаловать на сайт компании, лидера в области проминжиниринга",
+   "keywords" => "Проминжиниринг, Инженерные услуги"
 );
 ?>
